@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<title>Event Bubbling</title>
+<style>
+body{
+     padding:20px;
+     background-color:pink;
+    }
+div{
+    padding:20px;
+    background-color:green;
+    width:max-content;
+   }
+span{
+     display:block;
+     padding:20px;
+     background-color:blue;
+    }
+</style>
+</head>
+<body>
+ <div>
+  <span>
+   <button>Click Me!</button>
+  </span>
+ </div>
+ <script>
+  const body=document.getElementByTagName("body")[0];
+  const div=document.getElementByTagName("div")[0];
+  const span=document.getElementByTagName("span")[0];
+  const button=document.getElementByTagName("button")[0];
+  body.addEventListener('Click',()=>{
+        Console.log("body was Clicked")
+        });
+  div.addEventListener('Click',()=>{
+        Console.log("div was Clicked")
+        });
+  span.addEventListener('Click',()=>{
+        Console.log("span was Clicked")
+        });
+  button.addEventListener('Click',()=>{
+        Console.log("button was Clicked") 
+        event.stopPropagation();
+        });      
+ </script>
+ </body>
+ </html>
+   
